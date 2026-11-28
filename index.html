@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <script>
     tailwind.config = {
       theme: {
@@ -40,21 +39,18 @@
       }
     };
   </script>
-
   <style>
     body {
       background-color: #F8F5EE;
       color: #1E2928;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-
     .maya-pattern {
       background-image: radial-gradient(rgba(242, 183, 5, 0.14) 1.2px, transparent 1.2px),
                         radial-gradient(rgba(22, 109, 103, 0.14) 1.2px, #0D4F4B 1.2px);
       background-size: 32px 32px;
       background-position: 0 0, 16px 16px;
     }
-
     .card-hover {
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
     }
@@ -66,7 +62,7 @@
 </head>
 <body class="antialiased selection:bg-izamal selection:text-ink">
 
-  <!-- ==================== 1. NAVBAR FIJO ==================== -->
+  <!-- NAVBAR FIJO -->
   <header class="fixed top-0 inset-x-0 z-50 bg-piedra/95 backdrop-blur-md border-b border-piedra-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3.5">
       <a href="#inicio" class="flex items-center gap-2.5 group">
@@ -81,15 +77,13 @@
           <span class="text-[11px] uppercase tracking-widest text-cenote-light font-semibold">Aventura · Calma · Sabor</span>
         </div>
       </a>
-
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-ink/85">
         <a href="#propuesta" class="hover:text-cenote transition-colors">Propuesta</a>
         <a href="#impacto" class="hover:text-cenote transition-colors">Impacto</a>
+        <a href="#monitor" class="hover:text-cenote transition-colors">Monitor de Saturación</a>
         <a href="#rutas" class="hover:text-cenote transition-colors">Rutas</a>
         <a href="#red-tren" class="hover:text-cenote transition-colors">Red Tren Maya</a>
-        <a href="#plan-digital" class="hover:text-cenote transition-colors">Plan Digital</a>
       </nav>
-
       <div class="flex items-center gap-3">
         <a href="https://www.tiktok.com/@yucatan.oculto0?_r=1&_t=ZS-9BZMx8eNfvC" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all">
@@ -103,17 +97,16 @@
         </button>
       </div>
     </div>
-
     <div id="mobileMenu" class="hidden md:hidden bg-piedra border-t border-piedra-border px-6 py-4 space-y-3 text-sm font-medium">
       <a href="#propuesta" class="block py-1.5 text-ink hover:text-cenote">Propuesta</a>
       <a href="#impacto" class="block py-1.5 text-ink hover:text-cenote">Impacto</a>
+      <a href="#monitor" class="block py-1.5 text-ink hover:text-cenote">Monitor de Saturación</a>
       <a href="#rutas" class="block py-1.5 text-ink hover:text-cenote">Rutas</a>
       <a href="#red-tren" class="block py-1.5 text-ink hover:text-cenote">Red Tren Maya</a>
-      <a href="#plan-digital" class="block py-1.5 text-ink hover:text-cenote">Plan Digital</a>
     </div>
   </header>
 
-  <!-- ==================== 2. HERO SECTION ==================== -->
+  <!-- HERO SECTION -->
   <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-cenote maya-pattern text-piedra overflow-hidden">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -122,15 +115,12 @@
             <span class="w-2 h-2 rounded-full bg-izamal animate-pulse"></span>
             Campaña Turística Inteligente · Temporada Alta &amp; Sostenibilidad
           </div>
-
           <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-piedra">
             Yucatán Oculto: <span class="text-izamal italic">Aventura, Calma y Sabor</span>
           </h1>
-
           <p class="text-lg sm:text-xl text-piedra/90 leading-relaxed max-w-2xl">
             Redistribución inteligente de flujos turísticos mediante <strong>Ciencia de Datos</strong>, optimización intermodal con el <strong>Tren Maya</strong> e hipersegmentación digital. Una campaña que convierte identidad en experiencia y datos en demanda real.
           </p>
-
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a href="#rutas" class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all">
               <span>Explorar Rutas</span>
@@ -141,32 +131,24 @@
             </a>
           </div>
         </div>
-
-        <!-- Collage con tus banners de GitHub -->
         <div class="lg:col-span-5 grid grid-cols-2 gap-3">
-          <img src="banner_aventura.png" alt="Yucatán Oculto Aventura"
-               class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square bg-cenote-dark" />
-          <img src="banner_gastro.png" alt="Yucatán Oculto Gastronomía"
-               class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square translate-y-3 bg-cenote-dark" />
-          <img src="banner_relax.png" alt="Yucatán Oculto Relax"
-               class="col-span-2 rounded-2xl shadow-2xl border border-piedra/20 w-full max-h-56 object-cover mt-2 bg-cenote-dark" />
+          <img src="banner_aventura.png" alt="Yucatán Oculto Aventura" class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square bg-cenote-dark" />
+          <img src="banner_gastro.png" alt="Yucatán Oculto Gastronomía" class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square translate-y-3 bg-cenote-dark" />
+          <img src="banner_relax.png" alt="Yucatán Oculto Relax" class="col-span-2 rounded-2xl shadow-2xl border border-piedra/20 w-full max-h-56 object-cover mt-2 bg-cenote-dark" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 3. LA OPORTUNIDAD Y EL IMPACTO ==================== -->
+  <!-- LA OPORTUNIDAD Y EL IMPACTO -->
   <section id="propuesta" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-14">
       <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Propuesta de Valor</span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
-        De la saturación turística a una derrama sostenible
-      </h2>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">De la saturación turística a una derrama sostenible</h2>
       <p class="text-ink/80 mt-4 text-base sm:text-lg">
         Mientras los polos tradicionales enfrentan sobrecupo y desgaste, decenas de municipios yucatecos tienen infraestructura, cultura viva y conectividad lista para recibir viajeros de alto valor.
       </p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-6 mb-14">
       <div class="bg-piedra-warm/80 border border-piedra-border rounded-2xl p-7">
         <span class="text-xs font-bold uppercase tracking-wider text-red-700">Escenario Tradicional</span>
@@ -186,7 +168,6 @@
           </li>
         </ul>
       </div>
-
       <div class="bg-white border-2 border-cenote/20 rounded-2xl p-7 shadow-sm">
         <span class="text-xs font-bold uppercase tracking-wider text-cenote">Modelo Yucatán Oculto</span>
         <h3 class="font-serif text-xl font-bold text-cenote mt-1 mb-4">Dispersión Inteligente Intermodal</h3>
@@ -206,172 +187,161 @@
         </ul>
       </div>
     </div>
-
-    <!-- 3 Tarjetas de KPIs Destacados -->
     <div id="impacto" class="grid md:grid-cols-3 gap-6">
       <div class="card-hover bg-cenote text-piedra rounded-2xl p-7 relative overflow-hidden">
-        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-white/10 text-izamal px-3 py-1 rounded-full mb-4">
-          Redistribución Diaria
-        </span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-white/10 text-izamal px-3 py-1 rounded-full mb-4">Redistribución Diaria</span>
         <div class="font-serif text-4xl sm:text-5xl font-bold text-izamal mb-2">6,400</div>
         <h4 class="font-bold text-lg text-piedra mb-1">Turistas redistribuidos / día</h4>
-        <p class="text-sm text-piedra/80">
-          3,500 desde Mérida/Uxmal y 2,900 desde Chichén Itzá, aprovechando <strong>9,200 plazas receptivas</strong> sin saturar sitios.
-        </p>
+        <p class="text-sm text-piedra/80">3,500 desde Mérida/Uxmal y 2,900 desde Chichén Itzá, aprovechando <strong>9,200 plazas receptivas</strong> sin saturar sitios.</p>
       </div>
-
       <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7">
-        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-izamal-soft text-izamal-dark px-3 py-1 rounded-full mb-4">
-          Eficiencia Financiera
-        </span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-izamal-soft text-izamal-dark px-3 py-1 rounded-full mb-4">Eficiencia Financiera</span>
         <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">39.1%</div>
         <h4 class="font-bold text-lg text-ink mb-1">Ahorro operativo diario</h4>
-        <p class="text-sm text-ink/75">
-          Costo óptimo de <strong>$557,600 MXN/día</strong> frente a más de $915,000 MXN en esquemas tradicionales de dispersión.
-        </p>
+        <p class="text-sm text-ink/75">Costo óptimo de <strong>$557,600 MXN/día</strong> frente a más de $915,000 MXN en esquemas tradicionales de dispersión.</p>
       </div>
-
       <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7">
-        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-cenote-soft text-cenote px-3 py-1 rounded-full mb-4">
-          Simulación Monte Carlo
-        </span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wider bg-cenote-soft text-cenote px-3 py-1 rounded-full mb-4">Simulación Monte Carlo</span>
         <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">7.29%</div>
         <h4 class="font-bold text-lg text-ink mb-1">Riesgo de umbral crítico</h4>
-        <p class="text-sm text-ink/75">
-          Probabilidad anticipada (N=10,000) de superar <strong>210,000 pernoctas/mes</strong> en temporada alta (dic–ene) para activar pauta preventiva.
-        </p>
+        <p class="text-sm text-ink/75">Probabilidad anticipada (N=10,000) de superar <strong>210,000 pernoctas/mes</strong> en temporada alta (dic–ene) para activar pauta preventiva.</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 4. TRES PILARES DE EXPERIENCIA ==================== -->
-  <section id="rutas" class="py-20 lg:py-24 bg-piedra-warm/70 border-y border-piedra-border">
+  <!-- MONITOR DE SATURACIÓN INTERACTIVO (LA ALERTA) -->
+  <section id="monitor" class="py-20 lg:py-24 bg-piedra-warm border-y border-piedra-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Inteligencia de Flujos · Modelo INAH &amp; SEFOTUR</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">Monitor de Saturación y Descongestión</h2>
+          <p class="text-sm sm:text-base text-ink/80 mt-2 max-w-2xl">
+            Simula el comportamiento de afluencia por temporada para activar alertas de desvío hacia destinos secundarios antes de rebasar el umbral crítico de 210,000 pernoctas.
+          </p>
+        </div>
+        <div class="inline-flex bg-white p-1.5 rounded-full shadow-sm border border-piedra-border self-start">
+          <button id="btn-alta" onclick="setTemporada('alta')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-cenote text-piedra transition-all shadow-sm">
+            Temporada Alta (Dic–Ene)
+          </button>
+          <button id="btn-media" onclick="setTemporada('media')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-ink/65 hover:text-cenote transition-all">
+            Temporada Regular
+          </button>
+        </div>
+      </div>
+
+      <!-- Alerta Dinámica -->
+      <div id="alerta-banner" class="mb-10 rounded-2xl p-6 bg-red-50 border border-red-200 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl bg-red-100 p-3 rounded-2xl">🚨</span>
+          <div>
+            <p id="alerta-titulo" class="font-serif font-bold text-red-900 text-lg sm:text-xl">Alerta Preventiva Activa: Probabilidad mensual de 7.29% de superar umbral crítico</p>
+            <p id="alerta-desc" class="text-sm sm:text-base text-red-800 mt-1">Chichén Itzá y Mérida Centro operan cerca de saturación. Se recomienda activar pauta digital de desvío hacia Ek Balam, Ruta Puuc, Maní y Tecoh.</p>
+          </div>
+        </div>
+        <a href="#rutas" class="shrink-0 bg-red-700 hover:bg-red-800 text-piedra text-xs font-bold px-6 py-3 rounded-xl text-center transition shadow-md">
+          Ver Rutas de Desvío
+        </a>
+      </div>
+
+      <!-- Tarjetas de Monitoreo -->
+      <div id="monitor-cards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      <p class="text-xs text-ink/60 mt-6 italic">
+        *Nota metodológica: Indicadores calibrados con series históricas de visitantes INAH Yucatán y ocupación hotelera SEFOTUR, integrados al modelo de redistribución de 6,400 turistas/día sobre 9,200 plazas receptivas.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRES PILARES DE EXPERIENCIA -->
+  <section id="rutas" class="py-20 lg:py-24 bg-piedra">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Segmentos Estratégicos</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
-          Tres Pilares de Experiencia
-        </h2>
-        <p class="text-ink/80 mt-3 text-base sm:text-lg">
-          Cada perfil de viajero recibe una ruta conectada con estaciones del Tren Maya para evitar filas y llevar derrama a comunidades.
-        </p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">Tres Pilares de Experiencia</h2>
+        <p class="text-ink/80 mt-3 text-base sm:text-lg">Cada perfil de viajero recibe una ruta conectada con estaciones del Tren Maya para evitar filas y llevar derrama a comunidades.</p>
       </div>
-
       <div class="grid md:grid-cols-3 gap-8">
         <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
-          <img src="banner_aventura.png" alt="Aventura Ancestral" class="w-full aspect-square object-cover" />
+          <img src="banner_aventura.png" alt="Aventura Ancestral" class="w-full aspect-square object-cover bg-cenote-dark" />
           <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-cenote">01 · Aventura</span>
               <h3 class="font-serif text-2xl font-bold text-ink mt-1">Exploradores Culturales</h3>
-              <p class="text-sm text-ink/75 mt-2">
-                Ek Balam, Ruta Puuc (Kabah y Mayapán) y cenotes vírgenes con guías comunitarios y sin la saturación de Chichén Itzá.
-              </p>
+              <p class="text-sm text-ink/75 mt-2">Ek Balam, Ruta Puuc (Kabah y Mayapán) y cenotes vírgenes con guías comunitarios y sin la saturación de Chichén Itzá.</p>
             </div>
-            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
-              Estaciones: Mérida Teya · Izamal · Valladolid
-            </p>
+            <p class="text-xs font-semibold text-cenote pt-3 border-t border-piedra-border">Estaciones: Mérida Teya · Izamal · Valladolid</p>
           </div>
         </article>
-
         <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
-          <img src="banner_gastro.png" alt="Sabores con Raíz" class="w-full aspect-square object-cover" />
+          <img src="banner_gastro.png" alt="Sabores con Raíz" class="w-full aspect-square object-cover bg-cenote-dark" />
           <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-izamal-dark">02 · Sabor</span>
               <h3 class="font-serif text-2xl font-bold text-ink mt-1">Foodies y Raíces</h3>
-              <p class="text-sm text-ink/75 mt-2">
-                Cocina tradicional de horno de tierra, mercados locales y talleres culinarios en Izamal, Maní, Ticul y costa de Progreso.
-              </p>
+              <p class="text-sm text-ink/75 mt-2">Cocina tradicional de horno de tierra, mercados locales y talleres culinarios en Izamal, Maní, Ticul y costa de Progreso.</p>
             </div>
-            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
-              Estaciones: Estación Izamal · Mérida Teya
-            </p>
+            <p class="text-xs font-semibold text-cenote pt-3 border-t border-piedra-border">Estaciones: Estación Izamal · Mérida Teya</p>
           </div>
         </article>
-
         <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
-          <img src="banner_relax.png" alt="Calma y Haciendas" class="w-full aspect-square object-cover" />
+          <img src="banner_relax.png" alt="Calma y Haciendas" class="w-full aspect-square object-cover bg-cenote-dark" />
           <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">03 · Calma</span>
               <h3 class="font-serif text-2xl font-bold text-ink mt-1">Wellness &amp; Haciendas</h3>
-              <p class="text-sm text-ink/75 mt-2">
-                Cenotes tranquilos, haciendas históricas y descanso real para viajeros remotos en Chocholá, Tecoh y Valladolid.
-              </p>
+              <p class="text-sm text-ink/75 mt-2">Cenotes tranquilos, haciendas históricas y descanso real para viajeros remotos en Chocholá, Tecoh y Valladolid.</p>
             </div>
-            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
-              Estaciones: Maxcanú · Mérida Teya · Valladolid
-            </p>
+            <p class="text-xs font-semibold text-cenote pt-3 border-t border-piedra-border">Estaciones: Maxcanú · Mérida Teya · Valladolid</p>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 5. RED MULTIMODAL TREN MAYA ==================== -->
-  <section id="red-tren" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- RED MULTIMODAL TREN MAYA -->
+  <section id="red-tren" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-piedra-warm/50 rounded-3xl my-12 border border-piedra-border">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Conectividad Inteligente</span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
-        Red Multimodal de Descongestión
-      </h2>
-      <p class="text-ink/80 mt-3 text-base sm:text-lg">
-        Articulación del eje del Tren Maya con nodos alternos de menor presión turística.
-      </p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">Red Multimodal de Descongestión</h2>
+      <p class="text-ink/80 mt-3 text-base sm:text-lg">Articulación del eje del Tren Maya con nodos alternos de menor presión turística.</p>
     </div>
-
     <div class="bg-white border border-piedra-border rounded-3xl p-6 sm:p-8 shadow-md max-w-4xl mx-auto">
-      <img src="RUTA_RED_TREN.jpeg" alt="Red Multimodal de Descongestión Turística en Yucatán"
-           class="w-full rounded-2xl border border-piedra-border object-contain bg-white" />
-      <p class="text-xs sm:text-sm text-ink/75 mt-4">
-        Conecta estaciones articuladoras del Tren Maya con rutas de aventura, gastronomía y bienestar para equilibrar la afluencia diaria.
+      <img src="RUTA_RED_TREN.jpeg" alt="Red Multimodal de Descongestión Turística en Yucatán" class="w-full rounded-2xl border border-piedra-border object-contain bg-white" />
+      <p class="text-xs sm:text-sm text-ink/75 mt-6 leading-relaxed">
+        Conecta estaciones articuladoras del Tren Maya con rutas de aventura, gastronomía y bienestar para equilibrar la afluencia diaria y asegurar una derrama económica equitativa en todo el territorio.
       </p>
     </div>
   </section>
 
-  <!-- ==================== 6. ESTRATEGIA DIGITAL Y EMBUDO DE MEDIOS ==================== -->
-  <section id="plan-digital" class="py-20 lg:py-24 bg-piedra-warm/70 border-t border-piedra-border">
+  <!-- ESTRATEGIA DIGITAL Y EMBUDO DE MEDIOS -->
+  <section id="plan-digital" class="py-20 lg:py-24 bg-piedra">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Arquitectura de Campaña</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
-          Estrategia Digital y Embudo de Medios
-        </h2>
-        <p class="text-ink/80 mt-3 text-base sm:text-lg">
-          Contenido corto de alto alcance en TikTok e Instagram combinado con información clara sobre rutas y estaciones del Tren Maya.
-        </p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">Estrategia Digital y Embudo de Medios</h2>
+        <p class="text-ink/80 mt-3 text-base sm:text-lg">Contenido corto de alto alcance en TikTok e Instagram combinado con información clara sobre rutas y estaciones del Tren Maya.</p>
       </div>
-
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+        <div class="bg-white border border-piedra-border rounded-2xl p-6 shadow-sm">
           <span class="text-xs font-bold uppercase tracking-wider text-cenote">Etapa 01 · Descubrimiento</span>
           <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Videos Cortos &amp; Visuales</h3>
-          <p class="text-sm text-ink/75">
-            Reels y TikToks en <strong>@yucatan.oculto0</strong> mostrando rutas alternativas, cenotes tranquilos y cocina tradicional.
-          </p>
+          <p class="text-sm text-ink/75">Reels y TikToks en <strong>@yucatan.oculto0</strong> mostrando rutas alternativas, cenotes tranquilos y cocina tradicional.</p>
         </div>
-
-        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+        <div class="bg-white border border-piedra-border rounded-2xl p-6 shadow-sm">
           <span class="text-xs font-bold uppercase tracking-wider text-izamal-dark">Etapa 02 · Consideración</span>
           <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Rutas &amp; Conexión Tren Maya</h3>
-          <p class="text-sm text-ink/75">
-            Guía de estaciones cercanas y opciones de movilidad para armar itinerarios sin saturación.
-          </p>
+          <p class="text-sm text-ink/75">Guía de estaciones cercanas y opciones de movilidad para armar itinerarios sin saturación.</p>
         </div>
-
-        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+        <div class="bg-white border border-piedra-border rounded-2xl p-6 shadow-sm">
           <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">Etapa 03 · Conversión</span>
           <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Comunidad y Derrama Local</h3>
-          <p class="text-sm text-ink/75">
-            Impulso a prestadores locales, haciendas, mercados y experiencias comunitarias en Yucatán.
-          </p>
+          <p class="text-sm text-ink/75">Impulso a prestadores locales, haciendas, mercados y experiencias comunitarias en Yucatán.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- FOOTER -->
   <footer class="bg-cenote-dark text-piedra py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
@@ -393,6 +363,62 @@
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    const datosSaturacion = {
+      alta: [
+        { zona: 'Chichén Itzá (Zona Tradicional)', nivel: 'Saturado', pct: 95, color: 'bg-red-600', badge: 'bg-red-100 text-red-800', alt: 'Desviar hacia Ek Balam (42% ocupación)' },
+        { zona: 'Mérida Centro Histórico', nivel: 'Alta Presión', pct: 88, color: 'bg-amber-500', badge: 'bg-amber-100 text-amber-900', alt: 'Desviar hacia Izamal y Maní (48% ocupación)' },
+        { zona: 'Ruta Puuc & Kabah (Alterna)', nivel: 'Disponible', pct: 38, color: 'bg-emerald-600', badge: 'bg-emerald-100 text-emerald-900', alt: 'Conexión directa vía Estación Mérida Teya' },
+        { zona: 'Chocholá & Tecoh (Haciendas)', nivel: 'Disponible', pct: 34, color: 'bg-emerald-600', badge: 'bg-emerald-100 text-emerald-900', alt: 'Conexión vía Maxcanú / Mérida Teya' }
+      ],
+      media: [
+        { zona: 'Chichén Itzá (Zona Tradicional)', nivel: 'Moderado', pct: 68, color: 'bg-amber-500', badge: 'bg-amber-100 text-amber-900', alt: 'Complementar con Ek Balam y Valladolid' },
+        { zona: 'Mérida Centro Histórico', nivel: 'Moderado', pct: 64, color: 'bg-amber-500', badge: 'bg-amber-100 text-amber-900', alt: 'Complementar con Progreso e Izamal' },
+        { zona: 'Ruta Puuc & Kabah (Alterna)', nivel: 'Óptimo', pct: 26, color: 'bg-emerald-600', badge: 'bg-emerald-100 text-emerald-900', alt: 'Ideal para turismo cultural tranquilo' },
+        { zona: 'Chocholá & Tecoh (Haciendas)', nivel: 'Óptimo', pct: 22, color: 'bg-emerald-600', badge: 'bg-emerald-100 text-emerald-900', alt: 'Alta disponibilidad para estancias de bienestar' }
+      ]
+    };
+
+    function setTemporada(temp) {
+      const btnAlta = document.getElementById('btn-alta');
+      const btnMedia = document.getElementById('btn-media');
+      const banner = document.getElementById('alerta-banner');
+      const titulo = document.getElementById('alerta-titulo');
+      const desc = document.getElementById('alerta-desc');
+
+      if (temp === 'alta') {
+        btnAlta.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-cenote text-piedra transition-all shadow-sm';
+        btnMedia.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-ink/65 hover:text-cenote transition-all';
+        banner.className = 'mb-10 rounded-2xl p-6 bg-red-50 border border-red-200 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm';
+        titulo.textContent = 'Alerta Preventiva Activa: Probabilidad mensual de 7.29% de superar umbral crítico';
+        desc.textContent = 'Chichén Itzá y Mérida Centro operan cerca de saturación. Se recomienda activar pauta digital de desvío hacia Ek Balam, Ruta Puuc, Maní y Tecoh.';
+      } else {
+        btnMedia.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-cenote text-piedra transition-all shadow-sm';
+        btnAlta.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-ink/65 hover:text-cenote transition-all';
+        banner.className = 'mb-10 rounded-2xl p-6 bg-emerald-50 border border-emerald-200 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm';
+        titulo.textContent = 'Operación Estable: Capacidad receptiva equilibrada en corredores alternos';
+        desc.textContent = 'Momento ideal para campañas de fidelización y estancias prolongadas en haciendas, cenotes comunitarios y rutas gastronómicas.';
+      }
+
+      const cont = document.getElementById('monitor-cards');
+      cont.innerHTML = datosSaturacion[temp].map(item => `
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-piedra-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full ${item.badge}">${item.nivel}</span>
+              <span class="text-sm font-bold text-ink">${item.pct}%</span>
+            </div>
+            <h3 class="font-bold text-base text-ink">${item.zona}</h3>
+            <div class="w-full bg-gray-200 h-2 rounded-full mt-3 overflow-hidden">
+              <div class="h-2 rounded-full transition-all duration-500 ${item.color}" style="width: ${item.pct}%"></div>
+            </div>
+          </div>
+          <p class="text-xs text-cenote font-medium mt-4 pt-3 border-t border-gray-100">${item.alt}</p>
+        </div>
+      `).join('');
+    }
+
+    setTemporada('alta');
   </script>
 </body>
 </html>
