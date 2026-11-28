@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yucatán Oculto: Aventura, Calma y Sabor</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -50,18 +48,6 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    /* Animaciones suaves de aparición al hacer scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Patrón geométrico maya sutil en fondos */
     .maya-pattern {
       background-image: radial-gradient(rgba(242, 183, 5, 0.14) 1.2px, transparent 1.2px),
                         radial-gradient(rgba(22, 109, 103, 0.14) 1.2px, #0D4F4B 1.2px);
@@ -69,7 +55,6 @@
       background-position: 0 0, 16px 16px;
     }
 
-    /* Transición de tarjetas interactivas */
     .card-hover {
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
     }
@@ -82,12 +67,10 @@
 <body class="antialiased selection:bg-izamal selection:text-ink">
 
   <!-- ==================== 1. NAVBAR FIJO ==================== -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-piedra/90 backdrop-blur-md border-b border-piedra-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between py-3.5">
-      <!-- Logo -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-piedra/95 backdrop-blur-md border-b border-piedra-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3.5">
       <a href="#inicio" class="flex items-center gap-2.5 group">
         <span class="w-9 h-9 rounded-xl bg-cenote flex items-center justify-center text-izamal shadow-sm group-hover:bg-cenote-light transition-colors">
-          <!-- Icono SVG Pirámide / Cenote estilizado -->
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 3L2 20h20L12 3z" stroke-linejoin="round"/>
             <path d="M7.5 14h9M5 17h14M10 11h4" stroke-linecap="round"/>
@@ -99,22 +82,19 @@
         </div>
       </a>
 
-      <!-- Enlaces Desktop -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-ink/85">
         <a href="#propuesta" class="hover:text-cenote transition-colors">Propuesta</a>
         <a href="#impacto" class="hover:text-cenote transition-colors">Impacto</a>
         <a href="#rutas" class="hover:text-cenote transition-colors">Rutas</a>
-        <a href="#quiz" class="hover:text-cenote transition-colors">Quiz Viajero</a>
+        <a href="#red-tren" class="hover:text-cenote transition-colors">Red Tren Maya</a>
         <a href="#plan-digital" class="hover:text-cenote transition-colors">Plan Digital</a>
       </nav>
 
-      <!-- CTA + Botón Móvil -->
       <div class="flex items-center gap-3">
-        <a href="#quiz" class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all">
-          <span>Descubre tu Ruta</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+        <a href="https://www.tiktok.com/@yucatan.oculto0?_r=1&_t=ZS-9BZMx8eNfvC" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          <span>TikTok</span>
         </a>
         <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden p-2 rounded-xl text-cenote hover:bg-piedra-warm">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -124,26 +104,17 @@
       </div>
     </div>
 
-    <!-- Menú Móvil desplegable -->
     <div id="mobileMenu" class="hidden md:hidden bg-piedra border-t border-piedra-border px-6 py-4 space-y-3 text-sm font-medium">
       <a href="#propuesta" class="block py-1.5 text-ink hover:text-cenote">Propuesta</a>
       <a href="#impacto" class="block py-1.5 text-ink hover:text-cenote">Impacto</a>
       <a href="#rutas" class="block py-1.5 text-ink hover:text-cenote">Rutas</a>
-      <a href="#quiz" class="block py-1.5 text-ink hover:text-cenote">Quiz Viajero</a>
+      <a href="#red-tren" class="block py-1.5 text-ink hover:text-cenote">Red Tren Maya</a>
       <a href="#plan-digital" class="block py-1.5 text-ink hover:text-cenote">Plan Digital</a>
     </div>
   </header>
 
   <!-- ==================== 2. HERO SECTION ==================== -->
   <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-cenote maya-pattern text-piedra overflow-hidden">
-    <!-- Ilustración SVG decorativa de fondo (Ondas de cenote y silueta arquitectónica) -->
-    <svg class="absolute right-0 bottom-0 w-full max-w-3xl opacity-15 pointer-events-none" viewBox="0 0 800 420" fill="none">
-      <circle cx="620" cy="180" r="240" stroke="#F2B705" stroke-width="2" stroke-dasharray="6 6"/>
-      <circle cx="620" cy="180" r="170" stroke="#F8F5EE" stroke-width="1.5"/>
-      <path d="M420 420 L520 260 L720 260 L820 420 Z" fill="#166D67"/>
-      <path d="M470 350 L540 240 L700 240 L770 350 Z" fill="#F2B705"/>
-    </svg>
-
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 space-y-6">
@@ -163,78 +134,22 @@
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a href="#rutas" class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all">
               <span>Explorar Rutas</span>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-              </svg>
             </a>
-            <a href="#quiz" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-piedra border border-piedra/30 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all">
-              <span>Hacer Quiz Viajero</span>
-              <svg class="w-5 h-5 text-izamal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-              </svg>
+            <a href="https://www.tiktok.com/@yucatan.oculto0?_r=1&_t=ZS-9BZMx8eNfvC" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-piedra border border-piedra/30 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all">
+              <span>Ver videos en @yucatan.oculto0</span>
             </a>
           </div>
         </div>
 
-        <!-- Tarjeta visual derecha: Mapa esquemático de dispersión -->
-        <div class="lg:col-span-5">
-          <div class="bg-cenote-dark/80 border border-piedra/15 rounded-2xl p-6 sm:p-7 backdrop-blur-md shadow-2xl">
-            <div class="flex items-center justify-between border-b border-piedra/15 pb-4 mb-5">
-              <div>
-                <p class="text-xs uppercase tracking-wider text-izamal font-semibold">Red Intermodal Activa</p>
-                <h2 class="font-serif text-xl font-bold text-piedra">Eje Troncal Tren Maya</h2>
-              </div>
-              <span class="px-3 py-1 rounded-full bg-izamal/20 text-izamal text-xs font-bold">4 Corredores</span>
-            </div>
-
-            <!-- Esquema SVG de conexiones -->
-            <div class="bg-cenote/60 rounded-xl p-4 mb-5 border border-piedra/10">
-              <svg viewBox="0 0 360 175" class="w-full h-auto">
-                <!-- Línea troncal Tren Maya -->
-                <path d="M 30 115 Q 180 75 330 115" stroke="#F2B705" stroke-width="4" fill="none" stroke-linecap="round"/>
-                <!-- Ramales alimentadores -->
-                <path d="M 110 96 L 75 42" stroke="#5EEAD4" stroke-width="2" stroke-dasharray="4 3"/>
-                <path d="M 110 96 L 145 152" stroke="#5EEAD4" stroke-width="2" stroke-dasharray="4 3"/>
-                <path d="M 210 92 L 245 38" stroke="#5EEAD4" stroke-width="2" stroke-dasharray="4 3"/>
-                <path d="M 275 103 L 240 152" stroke="#5EEAD4" stroke-width="2" stroke-dasharray="4 3"/>
-
-                <!-- Nodos saturados (Origen) -->
-                <circle cx="110" cy="96" r="7" fill="#EF4444" stroke="#F8F5EE" stroke-width="2"/>
-                <text x="110" y="83" fill="#F8F5EE" font-size="9" font-weight="bold" text-anchor="middle">Mérida / Teya</text>
-
-                <circle cx="275" cy="103" r="7" fill="#EF4444" stroke="#F8F5EE" stroke-width="2"/>
-                <text x="275" y="89" fill="#F8F5EE" font-size="9" font-weight="bold" text-anchor="middle">Chichén Itzá</text>
-
-                <!-- Nodo intermedio Izamal -->
-                <circle cx="210" cy="92" r="6" fill="#F2B705" stroke="#083633" stroke-width="2"/>
-                <text x="210" y="112" fill="#F2B705" font-size="9" font-weight="bold" text-anchor="middle">Izamal</text>
-
-                <!-- Destinos emergentes -->
-                <circle cx="75" cy="42" r="5" fill="#2DD4BF"/>
-                <text x="75" y="29" fill="#CCFBF1" font-size="8.5" text-anchor="middle">Dzibilchaltún / Progreso</text>
-
-                <circle cx="145" cy="152" r="5" fill="#2DD4BF"/>
-                <text x="145" y="167" fill="#CCFBF1" font-size="8.5" text-anchor="middle">Ruta Puuc / Maní</text>
-
-                <circle cx="245" cy="38" r="5" fill="#2DD4BF"/>
-                <text x="245" y="25" fill="#CCFBF1" font-size="8.5" text-anchor="middle">Ek Balam</text>
-
-                <circle cx="240" cy="152" r="5" fill="#2DD4BF"/>
-                <text x="240" y="167" fill="#CCFBF1" font-size="8.5" text-anchor="middle">Tecoh / Chocholá</text>
-              </svg>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3 text-xs">
-              <div class="bg-white/5 rounded-xl p-3">
-                <span class="text-piedra/70 block">Orígenes descongestión</span>
-                <strong class="text-piedra text-sm">Mérida &amp; Chichén Itzá</strong>
-              </div>
-              <div class="bg-white/5 rounded-xl p-3">
-                <span class="text-piedra/70 block">Plazas receptivas</span>
-                <strong class="text-izamal text-sm">9,200 plazas/día</strong>
-              </div>
-            </div>
-          </div>
+        <!-- Collage con tus banners de GitHub -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-3">
+          <img src="banner_aventura.png" alt="Yucatán Oculto Aventura"
+               class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square bg-cenote-dark" />
+          <img src="banner_gastro.png" alt="Yucatán Oculto Gastronomía"
+               class="rounded-2xl shadow-2xl border border-piedra/20 w-full object-cover aspect-square translate-y-3 bg-cenote-dark" />
+          <img src="banner_relax.png" alt="Yucatán Oculto Relax"
+               class="col-span-2 rounded-2xl shadow-2xl border border-piedra/20 w-full max-h-56 object-cover mt-2 bg-cenote-dark" />
         </div>
       </div>
     </div>
@@ -242,7 +157,7 @@
 
   <!-- ==================== 3. LA OPORTUNIDAD Y EL IMPACTO ==================== -->
   <section id="propuesta" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="reveal text-center max-w-3xl mx-auto mb-14">
+    <div class="text-center max-w-3xl mx-auto mb-14">
       <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Propuesta de Valor</span>
       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
         De la saturación turística a una derrama sostenible
@@ -252,21 +167,10 @@
       </p>
     </div>
 
-    <!-- Comparativa Saturación vs Potencial -->
-    <div class="reveal grid md:grid-cols-2 gap-6 mb-14">
-      <!-- Tarjeta Problema -->
+    <div class="grid md:grid-cols-2 gap-6 mb-14">
       <div class="bg-piedra-warm/80 border border-piedra-border rounded-2xl p-7">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </span>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-red-700">Escenario Tradicional</span>
-            <h3 class="font-serif text-xl font-bold text-ink">Concentración y Sobrecupo</h3>
-          </div>
-        </div>
+        <span class="text-xs font-bold uppercase tracking-wider text-red-700">Escenario Tradicional</span>
+        <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-4">Concentración y Sobrecupo</h3>
         <ul class="space-y-3 text-sm sm:text-base text-ink/85">
           <li class="flex items-start gap-2.5">
             <span class="text-red-600 font-bold mt-0.5">✕</span>
@@ -283,19 +187,9 @@
         </ul>
       </div>
 
-      <!-- Tarjeta Solución -->
       <div class="bg-white border-2 border-cenote/20 rounded-2xl p-7 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="w-10 h-10 rounded-xl bg-cenote-soft text-cenote flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </span>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-cenote">Modelo Yucatán Oculto</span>
-            <h3 class="font-serif text-xl font-bold text-cenote">Dispersión Inteligente Intermodal</h3>
-          </div>
-        </div>
+        <span class="text-xs font-bold uppercase tracking-wider text-cenote">Modelo Yucatán Oculto</span>
+        <h3 class="font-serif text-xl font-bold text-cenote mt-1 mb-4">Dispersión Inteligente Intermodal</h3>
         <ul class="space-y-3 text-sm sm:text-base text-ink/85">
           <li class="flex items-start gap-2.5">
             <span class="text-cenote font-bold mt-0.5">✓</span>
@@ -314,44 +208,34 @@
     </div>
 
     <!-- 3 Tarjetas de KPIs Destacados -->
-    <div id="impacto" class="reveal grid md:grid-cols-3 gap-6">
-      <!-- KPI 1 -->
+    <div id="impacto" class="grid md:grid-cols-3 gap-6">
       <div class="card-hover bg-cenote text-piedra rounded-2xl p-7 relative overflow-hidden">
-        <div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-izamal/15"></div>
         <span class="inline-block text-xs font-bold uppercase tracking-wider bg-white/10 text-izamal px-3 py-1 rounded-full mb-4">
           Redistribución Diaria
         </span>
-        <div class="font-serif text-4xl sm:text-5xl font-bold text-izamal mb-2">
-          <span class="kpi-counter" data-target="6400">6,400</span>
-        </div>
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-izamal mb-2">6,400</div>
         <h4 class="font-bold text-lg text-piedra mb-1">Turistas redistribuidos / día</h4>
         <p class="text-sm text-piedra/80">
           3,500 desde Mérida/Uxmal y 2,900 desde Chichén Itzá, aprovechando <strong>9,200 plazas receptivas</strong> sin saturar sitios.
         </p>
       </div>
 
-      <!-- KPI 2 -->
-      <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7 relative overflow-hidden">
+      <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7">
         <span class="inline-block text-xs font-bold uppercase tracking-wider bg-izamal-soft text-izamal-dark px-3 py-1 rounded-full mb-4">
           Eficiencia Financiera
         </span>
-        <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">
-          39.1%
-        </div>
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">39.1%</div>
         <h4 class="font-bold text-lg text-ink mb-1">Ahorro operativo diario</h4>
         <p class="text-sm text-ink/75">
           Costo óptimo de <strong>$557,600 MXN/día</strong> frente a más de $915,000 MXN en esquemas tradicionales de dispersión.
         </p>
       </div>
 
-      <!-- KPI 3 -->
-      <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7 relative overflow-hidden">
+      <div class="card-hover bg-white border border-piedra-border rounded-2xl p-7">
         <span class="inline-block text-xs font-bold uppercase tracking-wider bg-cenote-soft text-cenote px-3 py-1 rounded-full mb-4">
           Simulación Monte Carlo
         </span>
-        <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">
-          7.29%
-        </div>
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-cenote mb-2">7.29%</div>
         <h4 class="font-bold text-lg text-ink mb-1">Riesgo de umbral crítico</h4>
         <p class="text-sm text-ink/75">
           Probabilidad anticipada (N=10,000) de superar <strong>210,000 pernoctas/mes</strong> en temporada alta (dic–ene) para activar pauta preventiva.
@@ -363,552 +247,152 @@
   <!-- ==================== 4. TRES PILARES DE EXPERIENCIA ==================== -->
   <section id="rutas" class="py-20 lg:py-24 bg-piedra-warm/70 border-y border-piedra-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal text-center max-w-3xl mx-auto mb-10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Segmentos Estratégicos</span>
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
           Tres Pilares de Experiencia
         </h2>
         <p class="text-ink/80 mt-3 text-base sm:text-lg">
-          Cada perfil de viajero recibe una narrativa creativa hecha a la medida y conectada directamente con estaciones del Tren Maya.
+          Cada perfil de viajero recibe una ruta conectada con estaciones del Tren Maya para evitar filas y llevar derrama a comunidades.
         </p>
       </div>
 
-      <!-- Pestañas Interactivas -->
-      <div class="reveal flex flex-wrap justify-center gap-3 mb-10" role="tablist">
-        <button onclick="selectPillar('aventura')" id="tab-aventura" class="pillar-tab active px-5 py-3 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all bg-cenote text-piedra shadow-md">
-          <svg class="w-4 h-4 text-izamal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-          </svg>
-          <span>Aventura · Exploradores</span>
-        </button>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
+          <img src="banner_aventura.png" alt="Aventura Ancestral" class="w-full aspect-square object-cover" />
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-cenote">01 · Aventura</span>
+              <h3 class="font-serif text-2xl font-bold text-ink mt-1">Exploradores Culturales</h3>
+              <p class="text-sm text-ink/75 mt-2">
+                Ek Balam, Ruta Puuc (Kabah y Mayapán) y cenotes vírgenes con guías comunitarios y sin la saturación de Chichén Itzá.
+              </p>
+            </div>
+            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
+              Estaciones: Mérida Teya · Izamal · Valladolid
+            </p>
+          </div>
+        </article>
 
-        <button onclick="selectPillar('gastro')" id="tab-gastro" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all bg-white text-ink border border-piedra-border hover:border-cenote">
-          <svg class="w-4 h-4 text-izamal-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-          <span>Gastro · Foodies</span>
-        </button>
+        <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
+          <img src="banner_gastro.png" alt="Sabores con Raíz" class="w-full aspect-square object-cover" />
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-izamal-dark">02 · Sabor</span>
+              <h3 class="font-serif text-2xl font-bold text-ink mt-1">Foodies y Raíces</h3>
+              <p class="text-sm text-ink/75 mt-2">
+                Cocina tradicional de horno de tierra, mercados locales y talleres culinarios en Izamal, Maní, Ticul y costa de Progreso.
+              </p>
+            </div>
+            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
+              Estaciones: Estación Izamal · Mérida Teya
+            </p>
+          </div>
+        </article>
 
-        <button onclick="selectPillar('relax')" id="tab-relax" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all bg-white text-ink border border-piedra-border hover:border-cenote">
-          <svg class="w-4 h-4 text-cenote-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          <span>Relax · Wellness</span>
-        </button>
-      </div>
-
-      <!-- Contenedor Dinámico del Pilar Seleccionado -->
-      <div id="pillar-display" class="reveal bg-white rounded-3xl border border-piedra-border shadow-lg overflow-hidden transition-all">
-        <!-- Se llena dinámicamente vía JS con el pilar activo -->
-      </div>
-
-      <!-- Vista resumida en 3 tarjetas inferiores para comparación rápida -->
-      <div class="reveal grid md:grid-cols-3 gap-6 mt-8">
-        <div onclick="selectPillar('aventura')" class="cursor-pointer card-hover bg-white/90 border border-piedra-border rounded-2xl p-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-cenote">01 · Aventura</span>
-          <h3 class="font-serif text-xl font-bold text-ink mt-1">Exploradores Culturales</h3>
-          <p class="text-sm text-ink/75 mt-2">Ek Balam, Ruta Puuc (Kabah / Mayapán) y cenotes vírgenes.</p>
-        </div>
-
-        <div onclick="selectPillar('gastro')" class="cursor-pointer card-hover bg-white/90 border border-piedra-border rounded-2xl p-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-izamal-dark">02 · Sabor</span>
-          <h3 class="font-serif text-xl font-bold text-ink mt-1">Foodies y Raíces</h3>
-          <p class="text-sm text-ink/75 mt-2">Izamal, Maní (cuna del Poc Chuc), Ticul y costa de Progreso.</p>
-        </div>
-
-        <div onclick="selectPillar('relax')" class="cursor-pointer card-hover bg-white/90 border border-piedra-border rounded-2xl p-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">03 · Calma</span>
-          <h3 class="font-serif text-xl font-bold text-ink mt-1">Wellness &amp; Haciendas</h3>
-          <p class="text-sm text-ink/75 mt-2">Chocholá, Tecoh (Hacienda Sotuta de Peón) y Valladolid.</p>
-        </div>
+        <article class="card-hover bg-white border border-piedra-border rounded-3xl overflow-hidden flex flex-col">
+          <img src="banner_relax.png" alt="Calma y Haciendas" class="w-full aspect-square object-cover" />
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">03 · Calma</span>
+              <h3 class="font-serif text-2xl font-bold text-ink mt-1">Wellness &amp; Haciendas</h3>
+              <p class="text-sm text-ink/75 mt-2">
+                Cenotes tranquilos, haciendas históricas y descanso real para viajeros remotos en Chocholá, Tecoh y Valladolid.
+              </p>
+            </div>
+            <p class="text-xs font-semibold text-cenote pt-2 border-t border-piedra-border">
+              Estaciones: Maxcanú · Mérida Teya · Valladolid
+            </p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 5. QUIZ INTELIGENTE INTERACTIVO ==================== -->
-  <section id="quiz" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <div class="reveal text-center max-w-2xl mx-auto mb-12">
-      <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-cenote-light bg-cenote-soft px-3 py-1 rounded-full">
-        Motor de Hipersegmentación
-      </span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-3">
-        Quiz Inteligente: Descubre tu Ruta Ideal
+  <!-- ==================== 5. RED MULTIMODAL TREN MAYA ==================== -->
+  <section id="red-tren" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Conectividad Inteligente</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
+        Red Multimodal de Descongestión
       </h2>
-      <p class="text-ink/80 mt-3">
-        Simulación del motor predictivo (Árbol de Decisión + Gradient Boosting + Regresión Logística) que conecta tu perfil con la ruta óptima del Tren Maya.
+      <p class="text-ink/80 mt-3 text-base sm:text-lg">
+        Articulación del eje del Tren Maya con nodos alternos de menor presión turística.
       </p>
     </div>
 
-    <div class="reveal bg-white border border-piedra-border rounded-3xl shadow-xl p-6 sm:p-10">
-      <!-- Formulario del Quiz -->
-      <form id="travelQuizForm" class="space-y-8">
-        <!-- Pregunta 1 -->
-        <div>
-          <label class="block font-serif text-xl font-bold text-ink mb-3">
-            1. ¿Qué buscas principalmente en este viaje por Yucatán?
-          </label>
-          <div class="grid sm:grid-cols-3 gap-3.5">
-            <label class="cursor-pointer">
-              <input type="radio" name="interest" value="aventura" class="peer sr-only" required checked />
-              <div class="p-4 rounded-2xl border-2 border-piedra-border peer-checked:border-cenote peer-checked:bg-cenote-soft/60 transition-all h-full">
-                <span class="font-bold text-cenote block">Aventura cultural</span>
-                <span class="text-xs text-ink/75 mt-1 block">Zonas arqueológicas sin multitudes y selva viva.</span>
-              </div>
-            </label>
-
-            <label class="cursor-pointer">
-              <input type="radio" name="interest" value="gastro" class="peer sr-only" />
-              <div class="p-4 rounded-2xl border-2 border-piedra-border peer-checked:border-izamal-dark peer-checked:bg-izamal-soft/60 transition-all h-full">
-                <span class="font-bold text-ink block">Sabores locales</span>
-                <span class="text-xs text-ink/75 mt-1 block">Cocina tradicional maya, mercados y pueblos mágicos.</span>
-              </div>
-            </label>
-
-            <label class="cursor-pointer">
-              <input type="radio" name="interest" value="relax" class="peer sr-only" />
-              <div class="p-4 rounded-2xl border-2 border-piedra-border peer-checked:border-cenote-light peer-checked:bg-cenote-soft/60 transition-all h-full">
-                <span class="font-bold text-cenote-light block">Descanso y bienestar</span>
-                <span class="text-xs text-ink/75 mt-1 block">Haciendas históricas, cenotes tranquilos y calma.</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Pregunta 2 y 3 en grid -->
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label for="budget" class="block font-serif text-lg font-bold text-ink mb-2">
-              2. Presupuesto estimado por día (MXN)
-            </label>
-            <select id="budget" name="budget" class="w-full rounded-xl border border-piedra-border bg-piedra px-4 py-3 text-sm font-medium text-ink focus:outline-none focus:border-cenote">
-              <option value="moderado">$1,500 – $2,800 MXN (Experiencia local)</option>
-              <option value="medio_alto" selected>$2,800 – $5,000 MXN (Confort &amp; curaduría)</option>
-              <option value="premium">Más de $5,000 MXN (Haciendas &amp; boutique)</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="days" class="block font-serif text-lg font-bold text-ink mb-2">
-              3. Duración del viaje
-            </label>
-            <select id="days" name="days" class="w-full rounded-xl border border-piedra-border bg-piedra px-4 py-3 text-sm font-medium text-ink focus:outline-none focus:border-cenote">
-              <option value="3">Escapada corta (2 a 3 días)</option>
-              <option value="5" selected>Viaje equilibrado (4 a 5 días)</option>
-              <option value="7">Inmersión total (6 o más días)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
-          <p class="text-xs text-ink/65">
-            * Algoritmo calibrado sobre 5,000 perfiles y capacidad de carga territorial.
-          </p>
-          <button type="submit" class="w-full sm:w-auto bg-cenote hover:bg-cenote-light text-piedra font-bold px-8 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
-            <span>Calcular mi Ruta Ideal</span>
-            <svg class="w-5 h-5 text-izamal" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </button>
-        </div>
-      </form>
-
-      <!-- Resultado Dinámico del Quiz (oculto inicialmente) -->
-      <div id="quizResult" class="hidden mt-8 pt-8 border-t border-piedra-border animate-fadeIn">
-        <div class="bg-cenote text-piedra rounded-2xl p-6 sm:p-8 relative overflow-hidden">
-          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-piedra/15 pb-5 mb-6">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-izamal">Perfil Asignado</span>
-              <h3 id="resTitle" class="font-serif text-2xl sm:text-3xl font-bold text-piedra mt-1">
-                Explorador Cultural · Aventura
-              </h3>
-            </div>
-            <div class="bg-white/10 border border-izamal/40 rounded-2xl px-5 py-3 text-center">
-              <span class="text-[11px] uppercase tracking-wider text-piedra/80 block">Índice de Afinidad</span>
-              <strong id="resScore" class="font-serif text-2xl sm:text-3xl font-bold text-izamal">9.4 / 10</strong>
-            </div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6 text-sm sm:text-base">
-            <div class="space-y-3">
-              <p class="text-izamal font-semibold uppercase text-xs tracking-wider">Itinerario Recomendado</p>
-              <p id="resRoute" class="text-piedra/95 leading-relaxed"></p>
-              <div class="bg-white/10 rounded-xl p-3.5 text-xs text-piedra/90">
-                <strong class="text-izamal block mb-1">Conexión Tren Maya &amp; Alimentadores:</strong>
-                <span id="resTrain"></span>
-              </div>
-            </div>
-
-            <div class="bg-cenote-dark/70 rounded-xl p-5 border border-piedra/10 flex flex-col justify-between">
-              <div>
-                <p class="text-xs font-bold uppercase tracking-wider text-izamal mb-2">Impacto Positivo de tu Elección</p>
-                <p id="resImpact" class="text-sm text-piedra/85 leading-relaxed"></p>
-              </div>
-              <button type="button" onclick="resetQuiz()" class="mt-5 w-full bg-izamal hover:bg-izamal-dark text-ink font-bold py-2.5 px-4 rounded-xl text-sm transition-colors">
-                Reiniciar Quiz y Probar Otro Perfil
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="bg-white border border-piedra-border rounded-3xl p-6 sm:p-8 shadow-md max-w-4xl mx-auto">
+      <img src="RUTA_RED_TREN.jpeg" alt="Red Multimodal de Descongestión Turística en Yucatán"
+           class="w-full rounded-2xl border border-piedra-border object-contain bg-white" />
+      <p class="text-xs sm:text-sm text-ink/75 mt-4">
+        Conecta estaciones articuladoras del Tren Maya con rutas de aventura, gastronomía y bienestar para equilibrar la afluencia diaria.
+      </p>
     </div>
   </section>
 
   <!-- ==================== 6. ESTRATEGIA DIGITAL Y EMBUDO DE MEDIOS ==================== -->
   <section id="plan-digital" class="py-20 lg:py-24 bg-piedra-warm/70 border-t border-piedra-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14">
         <span class="text-xs font-bold uppercase tracking-widest text-cenote-light">Arquitectura de Campaña</span>
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cenote mt-2">
           Estrategia Digital y Embudo de Medios
         </h2>
         <p class="text-ink/80 mt-3 text-base sm:text-lg">
-          Combinamos contenido inmersivo de alto alcance con captura de intención en buscadores y herramientas interactivas.
+          Contenido corto de alto alcance en TikTok e Instagram combinado con información clara sobre rutas y estaciones del Tren Maya.
         </p>
       </div>
 
-      <div class="reveal grid lg:grid-cols-12 gap-8 items-stretch mb-12">
-        <!-- Arquetipo Natalia (5 cols) -->
-        <div class="lg:col-span-5 bg-white border border-piedra-border rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm">
-          <div>
-            <div class="flex items-center gap-4 mb-5">
-              <!-- Avatar SVG estilizado -->
-              <div class="w-14 h-14 rounded-2xl bg-cenote text-izamal flex items-center justify-center font-serif text-2xl font-bold shrink-0">
-                N
-              </div>
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">Arquetipo Principal</span>
-                <h3 class="font-serif text-2xl font-bold text-ink">Natalia (28–34 años)</h3>
-              </div>
-            </div>
-
-            <p class="text-sm text-ink/80 leading-relaxed mb-5">
-              Profesional híbrida o remota de gran ciudad, nivel socioeconómico medio-alto. Busca desconexión auténtica, tranquilidad y turismo con impacto local positivo.
-            </p>
-
-            <div class="space-y-3 text-sm">
-              <div class="bg-piedra rounded-xl p-3.5">
-                <strong class="text-cenote block text-xs uppercase tracking-wider">Ecosistema Digital</strong>
-                <span>Descubre en <strong>Instagram y Pinterest</strong>; valida itinerarios en <strong>TikTok</strong> y reseñas.</span>
-              </div>
-              <div class="bg-piedra rounded-xl p-3.5">
-                <strong class="text-izamal-dark block text-xs uppercase tracking-wider">Barreras que Resolvemos</strong>
-                <span>Evita destinos masificados, logística poco clara y promesas turísticas genéricas.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-piedra-border flex items-center justify-between text-xs text-ink/70">
-            <span>Identidad Visual:</span>
-            <div class="flex items-center gap-2 font-semibold">
-              <span class="inline-flex items-center gap-1"><i class="w-3 h-3 rounded-full bg-izamal inline-block"></i> Izamal</span>
-              <span class="inline-flex items-center gap-1"><i class="w-3 h-3 rounded-full bg-cenote inline-block"></i> Cenote</span>
-              <span class="inline-flex items-center gap-1"><i class="w-3 h-3 rounded-full bg-piedra-border inline-block"></i> Piedra Maya</span>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-cenote">Etapa 01 · Descubrimiento</span>
+          <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Videos Cortos &amp; Visuales</h3>
+          <p class="text-sm text-ink/75">
+            Reels y TikToks en <strong>@yucatan.oculto0</strong> mostrando rutas alternativas, cenotes tranquilos y cocina tradicional.
+          </p>
         </div>
 
-        <!-- Embudo Presupuestario Interactivo (7 cols) -->
-        <div class="lg:col-span-7 bg-white border border-piedra-border rounded-3xl p-7 sm:p-8 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">Distribución de Inversión</span>
-                <h3 class="font-serif text-2xl font-bold text-ink">Embudo Presupuestario</h3>
-              </div>
-              <span class="text-xs font-semibold bg-cenote-soft text-cenote px-3 py-1 rounded-full">100% Medible</span>
-            </div>
+        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-izamal-dark">Etapa 02 · Consideración</span>
+          <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Rutas &amp; Conexión Tren Maya</h3>
+          <p class="text-sm text-ink/75">
+            Guía de estaciones cercanas y opciones de movilidad para armar itinerarios sin saturación.
+          </p>
+        </div>
 
-            <div class="space-y-5">
-              <!-- Fase 1: 45% Consideración -->
-              <div class="p-4 rounded-2xl bg-piedra border border-piedra-border hover:border-cenote transition-colors">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-bold text-cenote text-base">Consideración · Alta Intención</span>
-                  <span class="font-serif font-bold text-2xl text-cenote">45%</span>
-                </div>
-                <div class="w-full h-3 bg-piedra-warm rounded-full overflow-hidden mb-2.5">
-                  <div class="h-full bg-cenote rounded-full" style="width: 45%;"></div>
-                </div>
-                <p class="text-sm text-ink/80">
-                  <strong>Google Search</strong> para búsquedas activas + <strong>Quiz interactivo (Streamlit/Web)</strong> con tarjetas dinámicas adaptadas al perfil del viajero.
-                </p>
-              </div>
-
-              <!-- Fase 2: 35% Atracción -->
-              <div class="p-4 rounded-2xl bg-piedra border border-piedra-border hover:border-izamal-dark transition-colors">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-bold text-ink text-base">Atracción · Descubrimiento</span>
-                  <span class="font-serif font-bold text-2xl text-izamal-dark">35%</span>
-                </div>
-                <div class="w-full h-3 bg-piedra-warm rounded-full overflow-hidden mb-2.5">
-                  <div class="h-full bg-izamal rounded-full" style="width: 35%;"></div>
-                </div>
-                <p class="text-sm text-ink/80">
-                  <strong>TikTok e Instagram Reels</strong> (<code>@yucatan.oculto0</code>) con videos inmersivos de rutas poco concurridas y conexiones directas con el Tren Maya.
-                </p>
-              </div>
-
-              <!-- Fase 3: 20% Fidelización -->
-              <div class="p-4 rounded-2xl bg-piedra border border-piedra-border hover:border-cenote-light transition-colors">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-bold text-cenote-light text-base">Fidelización · Recurrencia</span>
-                  <span class="font-serif font-bold text-2xl text-cenote-light">20%</span>
-                </div>
-                <div class="w-full h-3 bg-piedra-warm rounded-full overflow-hidden mb-2.5">
-                  <div class="h-full bg-cenote-light rounded-full" style="width: 20%;"></div>
-                </div>
-                <p class="text-sm text-ink/80">
-                  <strong>Email marketing y remarketing</strong> con recomendaciones personalizadas para incentivar visitas en temporada baja y estancias prolongadas.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Indicadores de Éxito -->
-          <div class="mt-6 pt-5 border-t border-piedra-border">
-            <span class="text-xs font-bold uppercase tracking-wider text-ink/60 block mb-3">KPIs de Control y Desempeño</span>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center text-xs">
-              <div class="bg-cenote-soft/70 text-cenote font-bold py-2 px-3 rounded-xl">CPA Optimizado</div>
-              <div class="bg-cenote-soft/70 text-cenote font-bold py-2 px-3 rounded-xl">Tasa Conversión (CR)</div>
-              <div class="bg-izamal-soft text-ink font-bold py-2 px-3 rounded-xl">ROAS Publicitario</div>
-              <div class="bg-izamal-soft text-ink font-bold py-2 px-3 rounded-xl">Derrama Local</div>
-            </div>
-          </div>
+        <div class="bg-white border border-piedra-border rounded-2xl p-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-cenote-light">Etapa 03 · Conversión</span>
+          <h3 class="font-serif text-xl font-bold text-ink mt-1 mb-2">Comunidad y Derrama Local</h3>
+          <p class="text-sm text-ink/75">
+            Impulso a prestadores locales, haciendas, mercados y experiencias comunitarias en Yucatán.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 7. FOOTER ELEGANTE ==================== -->
-  <footer class="bg-cenote-dark text-piedra py-14 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-piedra/15">
-      <div class="max-w-xl">
-        <span class="text-xs font-bold uppercase tracking-widest text-izamal">Yucatán Oculto · Aventura, Calma y Sabor</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-piedra mt-2">
-          “Convertimos identidad en experiencia y datos en demanda real.”
-        </h2>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-cenote-dark text-piedra py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="font-serif text-2xl font-bold">Yucatán Oculto: Aventura, Calma y Sabor</h3>
+        <p class="text-sm text-piedra/80 mt-1">Campaña digital de turismo sostenible conectada al Tren Maya.</p>
       </div>
-
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <a href="#quiz" class="bg-izamal hover:bg-izamal-dark text-ink font-bold px-5 py-3 rounded-xl text-sm transition-colors">
-          Probar Quiz Viajero
-        </a>
-        <div class="bg-white/10 px-4 py-2.5 rounded-xl text-sm">
-          <span class="text-piedra/70 block text-xs">Comunidad Oficial</span>
-          <strong class="text-izamal">@yucatan.oculto0</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-piedra/75">
-      <p>
-        Equipo creador: <strong class="text-piedra">Miriam Cadena López</strong> · <strong class="text-piedra">Christopher Ginez Rangel</strong> · <strong class="text-piedra">Carolina Zamora Tacuepian</strong>
-      </p>
-      <p>Ciencia de Datos aplicada al Turismo Sostenible · Yucatán, México</p>
+      <a href="https://www.tiktok.com/@yucatan.oculto0?_r=1&_t=ZS-9BZMx8eNfvC" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-izamal hover:bg-izamal-dark text-ink font-bold px-5 py-3 rounded-full transition shadow">
+        <span>Síguenos en TikTok (@yucatan.oculto0)</span>
+      </a>
     </div>
   </footer>
 
-  <!-- ==================== JAVASCRIPT INTERACTIVO ==================== -->
   <script>
-    // 1. Menú móvil
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Cerrar menú móvil al hacer clic en un enlace
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-    });
-
-    // 2. Datos de los Tres Pilares de Experiencia
-    const pillarsData = {
-      aventura: {
-        badge: 'Aventura · Exploradores Culturales',
-        slogan: '“Yucatán te espera más allá de las ruinas.”',
-        description: 'Diseñado para viajeros curiosos que buscan arquitectura maya monumental sin aglomeraciones, senderismo en selva baja y cenotes cristalinos gestionados por cooperativas locales.',
-        destinations: ['Ek Balam (Acrópolis)', 'Ruta Puuc (Kabah y Mayapán)', 'Cenotes de Homún y Cuzamá'],
-        station: 'Estación Valladolid / Maxcanú + transporte alimentador directo',
-        accent: '#0D4F4B',
-        svgArt: `
-          <svg viewBox="0 0 400 240" class="w-full h-full">
-            <defs>
-              <linearGradient id="gradAventura" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0D4F4B"/>
-                <stop offset="100%" stop-color="#166D67"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="240" fill="url(#gradAventura)"/>
-            <circle cx="320" cy="55" r="34" fill="#F2B705" opacity="0.9"/>
-            <path d="M40 240 L145 95 L255 95 L360 240 Z" fill="#083633"/>
-            <path d="M95 240 L165 125 L235 125 L305 240 Z" fill="#1E2928" opacity="0.45"/>
-            <path d="M120 185 H280 M140 155 H260 M160 125 H240" stroke="#F2B705" stroke-width="3" stroke-linecap="round"/>
-            <text x="24" y="38" fill="#F8F5EE" font-family="serif" font-size="16" font-weight="bold">CORREDOR ARQUEOLÓGICO</text>
-          </svg>`
-      },
-      gastro: {
-        badge: 'Gastro · Foodies y Raíces',
-        slogan: '“La gastronomía yucateca como nunca la probaste.”',
-        description: 'Un recorrido sensorial por cocinas tradicionales, mercados históricos, talleres de recados mayas y mariscos frescos en la costa esmeralda.',
-        destinations: ['Izamal (Pueblo Mágico)', 'Maní (Cuna del Poc Chuc)', 'Ticul y Costa de Progreso'],
-        station: 'Estación Izamal & Estación Mérida Teya + enlace costero',
-        accent: '#D99B04',
-        svgArt: `
-          <svg viewBox="0 0 400 240" class="w-full h-full">
-            <defs>
-              <linearGradient id="gradGastro" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#D99B04"/>
-                <stop offset="100%" stop-color="#F2B705"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="240" fill="url(#gradGastro)"/>
-            <path d="M0 150 Q 100 110 200 150 T 400 150 V 240 H 0 Z" fill="#0D4F4B"/>
-            <circle cx="200" cy="115" r="54" fill="#F8F5EE" stroke="#0D4F4B" stroke-width="4"/>
-            <circle cx="200" cy="115" r="38" fill="#FEF6DC" stroke="#D99B04" stroke-width="2" stroke-dasharray="5 4"/>
-            <text x="24" y="38" fill="#1E2928" font-family="serif" font-size="16" font-weight="bold">RUTA SABOR Y RAÍCES</text>
-          </svg>`
-      },
-      relax: {
-        badge: 'Relax · Wellness & Haciendas',
-        slogan: '“Conecta con la calma.”',
-        description: 'Refugios ideales para viajeros remotos que buscan descanso profundo, arquitectura henequenera restaurada, herbolaria maya y aguas subterráneas silenciosas.',
-        destinations: ['Chocholá', 'Tecoh (Hacienda Sotuta de Peón)', 'Valladolid y cenotes privados'],
-        station: 'Estación Mérida Teya / Estación Valladolid',
-        accent: '#166D67',
-        svgArt: `
-          <svg viewBox="0 0 400 240" class="w-full h-full">
-            <defs>
-              <linearGradient id="gradRelax" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#166D67"/>
-                <stop offset="100%" stop-color="#0D4F4B"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="240" fill="url(#gradRelax)"/>
-            <ellipse cx="200" cy="165" rx="145" ry="42" fill="#5EEAD4" opacity="0.28"/>
-            <ellipse cx="200" cy="165" rx="95" ry="26" fill="#99F6E4" opacity="0.4"/>
-            <path d="M120 130 C 120 75, 280 75, 280 130" stroke="#F2B705" stroke-width="4" fill="none"/>
-            <text x="24" y="38" fill="#F8F5EE" font-family="serif" font-size="16" font-weight="bold">PAZ EN EL MAYAB</text>
-          </svg>`
-      }
-    };
-
-    function selectPillar(key) {
-      const data = pillarsData[key];
-      const display = document.getElementById('pillar-display');
-
-      // Actualizar estado visual de los botones
-      document.querySelectorAll('.pillar-tab').forEach(btn => {
-        btn.classList.remove('bg-cenote', 'text-piedra', 'shadow-md');
-        btn.classList.add('bg-white', 'text-ink', 'border', 'border-piedra-border');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-      const activeBtn = document.getElementById(`tab-${key}`);
-      activeBtn.classList.remove('bg-white', 'text-ink', 'border', 'border-piedra-border');
-      activeBtn.classList.add('bg-cenote', 'text-piedra', 'shadow-md');
-
-      // Renderizar contenido
-      display.innerHTML = `
-        <div class="grid lg:grid-cols-12">
-          <div class="lg:col-span-5 min-h-[220px]">
-            ${data.svgArt}
-          </div>
-          <div class="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between">
-            <div>
-              <span class="inline-block text-xs font-bold uppercase tracking-wider bg-cenote-soft text-cenote px-3 py-1 rounded-full">
-                ${data.badge}
-              </span>
-              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-ink mt-3">
-                ${data.slogan}
-              </h3>
-              <p class="text-ink/80 mt-3 text-sm sm:text-base leading-relaxed">
-                ${data.description}
-              </p>
-
-              <div class="mt-5">
-                <span class="text-xs font-bold uppercase tracking-wider text-ink/60 block mb-2">Destinos Clave del Corredor</span>
-                <div class="flex flex-wrap gap-2">
-                  ${data.destinations.map(d => `<span class="bg-piedra border border-piedra-border text-ink text-xs font-semibold px-3 py-1.5 rounded-lg">${d}</span>`).join('')}
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-piedra-border flex flex-wrap items-center justify-between gap-3 text-xs">
-              <span class="text-cenote font-semibold">🚆 ${data.station}</span>
-              <a href="#quiz" class="text-izamal-dark font-bold hover:underline">Personalizar en el Quiz →</a>
-            </div>
-          </div>
-        </div>
-      `;
     }
-
-    // Inicializar con el pilar "aventura"
-    selectPillar('aventura');
-
-    // 3. Lógica del Quiz Inteligente
-    const quizForm = document.getElementById('travelQuizForm');
-    const quizResult = document.getElementById('quizResult');
-
-    quizForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const interest = document.querySelector('input[name="interest"]:checked').value;
-      const budget = document.getElementById('budget').value;
-      const days = parseInt(document.getElementById('days').value, 10);
-
-      // Cálculo simulado de afinidad (escala 1 a 10)
-      let score = 8.9;
-      if (budget === 'medio_alto') score += 0.4;
-      if (budget === 'premium') score += 0.5;
-      if (days >= 5) score += 0.2;
-      score = Math.min(9.9, score).toFixed(1);
-
-      const recommendations = {
-        aventura: {
-          title: 'Explorador Cultural · Corredor Arqueológico',
-          route: `Itinerario de ${days} días por Ek Balam, zona arqueológica de Kabah en la Ruta Puuc y cenotes comunitarios de bajo impacto, evitando horarios pico de Chichén Itzá.`,
-          train: 'Abordaje en Estación Mérida Teya o Estación Valladolid con transporte alimentador sincronizado hacia Ek Balam y Ruta Puuc.',
-          impact: 'Tu ruta libera presión sobre Chichén Itzá y canaliza gasto directo hacia guías certificados y cooperativas ejidales.'
-        },
-        gastro: {
-          title: 'Foodie & Raíces · Ruta Gastronómica',
-          route: `Itinerario de ${days} días degustando cocina originaria en Izamal, talleres de Poc Chuc tradicional en Maní, alfarería en Ticul y mariscos frescos en Progreso.`,
-          train: 'Conexión troncal vía Estación Izamal y Estación Mérida Teya con enlace directo al corredor gastronómico sur y costa.',
-          impact: 'Impulsas cocineras tradicionales, productores locales y comercios familiares en municipios con alta capacidad receptiva.'
-        },
-        relax: {
-          title: 'Wellness & Calma · Paz en el Mayab',
-          route: `Itinerario de ${days} días de desconexión en haciendas históricas de Tecoh (Sotuta de Peón), retiros naturales en Chocholá y tardes tranquilas en Valladolid.`,
-          train: 'Llegada cómoda vía Estación Mérida Teya o Estación Valladolid con traslados privados de baja huella hacia haciendas.',
-          impact: 'Fomentas estancias prolongadas de bajo impacto ambiental con alto valor económico para comunidades anfitrionas.'
-        }
-      };
-
-      const selected = recommendations[interest];
-      document.getElementById('resTitle').textContent = selected.title;
-      document.getElementById('resScore').textContent = `${score} / 10`;
-      document.getElementById('resRoute').textContent = selected.route;
-      document.getElementById('resTrain').textContent = selected.train;
-      document.getElementById('resImpact').textContent = selected.impact;
-
-      quizResult.classList.remove('hidden');
-      quizResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    function resetQuiz() {
-      quizResult.classList.add('hidden');
-      quizForm.reset();
-    }
-
-    // 4. Animaciones de aparición al hacer scroll (IntersectionObserver)
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
